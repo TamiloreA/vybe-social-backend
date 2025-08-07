@@ -29,7 +29,7 @@ exports.setupSocket = (server) => {
 
   io = require("socket.io")(server, {
     cors: {
-      origin: process.env.FRONTEND_URL || "http://localhost:3000",
+      origin: process.env.FRONTEND_URL || "https://vybe-social-media-4jtt.vercel.app",
       methods: ["GET", "POST"],
       credentials: true,
     },
