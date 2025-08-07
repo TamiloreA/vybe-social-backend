@@ -29,13 +29,7 @@ exports.setupSocket = (server) => {
 
   io = require("socket.io")(server, {
     cors: {
-      origin: (origin, callback) => {
-      if (!origin || allowedOrigins.includes(origin) || allowedPatterns.some(p => p.test(origin))) {
-        callback(null, true);
-      } else {
-        callback(new Error('Not allowed by CORS'));
-      }
-    },
+      origin: process.env.FRONTEND_URL || "https://vybe-social-media-4jtt.vercel.app",
       methods: ["GET", "POST"],
       credentials: true,
     },
