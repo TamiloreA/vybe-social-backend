@@ -18,7 +18,7 @@ app.use(cookieParser());
 
 const allowedOrigins = [
   process.env.FRONTEND_URL,
-  'http://localhost:3000',
+  'https://vybe-social-media-4jtt.vercel.app',
   // 'ws://localhost:3000',
   process.env.FRONTEND_URL
 ].filter(Boolean);
