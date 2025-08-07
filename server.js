@@ -17,6 +17,7 @@ app.use(express.json({ limit: '50mb' }));
 app.use(cookieParser());
 
 const allowedOrigins = [
+  process.env.FRONTEND_URL,
   'http://localhost:3000',
   // 'ws://localhost:3000',
   process.env.FRONTEND_URL
