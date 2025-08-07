@@ -23,19 +23,11 @@ const allowedOrigins = [
   process.env.FRONTEND_URL
 ].filter(Boolean);
 
-const allowedPatterns = [
-  /^https:\/\/vybe-social-media-[a-z0-9]+\.vercel\.app$/, 
-  /^https:\/\/vybe-social-media-[a-z0-9]+-[a-z0-9]+\.vercel\.app$/
-];
-
 app.use(cors({
     origin: (origin, callback) => {
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
-    } else if (allowedPatterns.some(pattern => pattern.test(origin))) {
-      callback(null, true);
     } else {
-      console.log(`Blocked by CORS: ${origin}`);
       callback(new Error('Not allowed by CORS'));
     }
   },
